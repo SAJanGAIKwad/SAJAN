@@ -77,7 +77,7 @@ ul{
 {
     z-index: 2;
     opacity: 1;
-    animation: slideSection 3s ease;
+    animation: slideSection 1.5s ease;
 }
 
 @keyframes slideSection
