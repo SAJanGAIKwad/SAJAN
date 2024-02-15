@@ -347,7 +347,7 @@ h3.my-profession{
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
     right: 50px;
-    bottom: 20px;
+    bottom: 8px;
 }
 .home-img::before{
     content: '';
@@ -357,12 +357,12 @@ h3.my-profession{
     border-top: 10px solid var(--skin-color);
     border-left: 10px solid var(--skin-color);
     left: 50px;
-    top: -40px;
+    top: -10px;
 }
 .home .home-img img{
     margin: auto;
     border-radius: 5px;
-    height: 250px;
+    height: 350px;
     display: inline;
 }
 /*About*/
@@ -532,60 +532,7 @@ h3.my-profession{
     color: var(--text-black-700);
 }
 
-/*Service*/
-.service .container{
-    padding-bottom: 40px;
-}
-.service .service-item{
-    margin-bottom: 30px;
-    flex: 0 0 33.33%;
-    max-width: 33.33;
-}
-.service .service-item .service-item-inner{
-    background-color: var(--bg-black-100);
-    border: 1px solid var(--bg-black-50);
-    border-radius: 10px;
-    padding: 30px 15px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-.service .service-item .service-item-inner:hover{
-    box-shadow: 0 0 20px rgba(48,46,77,0.15);
-}
-.service .service-item .service-item-inner .icon{
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 30px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-.service .service-item .service-item-inner .icon .fa{
-    font-size: 40px;
-    line-height: 60px;
-    color: var(--skin-color);
-    transition: all 0.3s ease;
-}
-.service .service-item .service-item-inner:hover .icon{
-    background: var(--skin-color);
-}
-.service .service-item .service-item-inner:hover .icon .fa{
-    font-size: 25px;
-    color: #ffffff;
-}
-.service .service-item .service-item-inner h4{
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: var(--text-black-900);
-    font-weight: 700;
-    text-transform: capitalize;
-}
-.service .service-item .service-item-inner p{
-    font-size: 16px;
-    color: var(--text-black-700);
-    line-height: 25px;
-}
+
 /*Portfolio*/
 .portfolio .container{
     padding-bottom: 40px;
