@@ -535,32 +535,38 @@ h3.my-profession{
 
 
 /*Portfolio*/
-.portfolio .container{
+.project .container{
     padding-bottom: 40px;
 }
-.portfolio .portfolio-heading{
+.project .project-heading{
     flex: 0 0 100;
     max-width: 100%;
     margin-bottom: 40px;
 }
-.portfolio .portfolio-heading h2{
+.project .project-heading h2{
     color: var(--text-black-900);
     font-weight: 500;
 }
-.portfolio .portfolio-item{
+.project .project-item{
     flex: 0 0 33.33%;
     max-width: 33.33%;
     margin-bottom: 30px;
 }
-.portfolio .portfolio-item-inner{
+.project .project-item-inner{
     border: 6px solid var(--bg-black-100);
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
 }
-.portfolio .portfolio-item-inner .portfolio-img img{
+.project .project-item-inner .project-img img{
     width: 100%;
     display: block;
+}
+.project .project-item-inner .project-link a{
+    margin: 100px;
+
+    font-size: 1.5rem;
+    
 }
 /*Contact*/
 .contact-title{
@@ -688,7 +694,7 @@ h3.my-profession{
 @media(max-width:991px)
 {
     .contact .contact-info-item
-    .portfolio .portfolio-item
+    .project .project-item
     .service .service-item
     {
         flex: 0 0 50%;
@@ -710,7 +716,7 @@ h3.my-profession{
 {
     .contact .contact-form .col-6,
     .contact .contact-info-item,
-    .portfolio .portfolio-item,
+    .project .project-item,
     .service .service-item,
     .about .about-content .education,
     .about .about-content .experience,
