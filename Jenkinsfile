@@ -1,18 +1,30 @@
+@Library("Shared") _
 pipeline {
     agent any
 
     stages {
+        stage('Hello')
+        {
+            steps{
+                script{
+                    hello()
+                }
+            }
+        }
         stage('Code') {
             steps {
-                echo 'Cloning Code...'
-                git url: "https://github.com/SAJanGAIKwad/SAJAN.git", branch: 'main'
-                echo 'Code Pulled Successfully'
+                script{
+                    clone("https://github.com/SAJanGAIKwad/SAJAN.git", "main")
+                }
             }
         }
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                bat "docker build -t portfolio:latest ."
+                script{
+                    docker_build("portfolio", "latest", "sajangaikwad2002")
+                }
+                
             }
         }
 
@@ -23,24 +35,19 @@ pipeline {
         }
         stage('Push to DockerHub') {
             steps {
-                echo 'Pushing Image to DockerHub'
-                withCredentials([usernamePassword(
-                    credentialsId: "dockerHubCred",
-                    passwordVariable: "dockerHubPass",
-                    usernameVariable: "dockerHubUser")]) {
-                    bat "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                    bat "docker image tag portfolio:latest ${env.dockerHubUser}/portfolio:latest"
-                    bat "docker push ${env.dockerHubUser}/portfolio:latest"
+                script{
+                    docker_push("portfolio", "latest", "sajangaikwad2002")
                 }
             }
         }
 
         stage('Deploy') {
-        steps {
-            echo 'Deploying the Docker container...'
-            bat "docker run -d -p 80:80 portfolio:latest"
+            steps {
+                script{
+                    docker_compose()
+                }
+        
             }
         }
     }
 }
-
