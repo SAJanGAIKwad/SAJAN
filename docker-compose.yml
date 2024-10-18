@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    image: portfolio:latest # Use the image you built in your Jenkins pipeline
+    build:
+      context: . # This tells Docker Compose to use the Dockerfile in the current directory
+    ports:
+      - "80:80" # Map port 80 on the host to port 80 on the container
+    environment:
+      - ENV=production # Optional: Set any environment variables your app needs
+    restart: always
