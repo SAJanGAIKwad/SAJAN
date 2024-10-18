@@ -11,6 +11,7 @@ pipeline {
                 }
             }
         }
+        
         stage('Code') {
             steps {
                 script{
@@ -18,6 +19,7 @@ pipeline {
                 }
             }
         }
+        
         stage('Build') {
             steps {
                 echo 'Building the project...'
@@ -33,6 +35,7 @@ pipeline {
                 echo 'Running tests...'
             }
         }
+        
         stage('Push to DockerHub') {
             steps {
                 script{
